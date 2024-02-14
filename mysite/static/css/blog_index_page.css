@@ -1,0 +1,139 @@
+
+.first-blog{
+    padding: 50px 0px 100px;
+}
+
+.container.stretched{
+    width: 1280px;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.grid--justify-between {
+    justify-content: space-between;
+}
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.grid--1of2>.grid-cell.blog-card-wrap:nth-child(2){
+    margin-top: 0 !important;
+}
+.grid--1of2>.grid-cell.blog-card-wrap+.grid-cell {
+    margin-top: 50px;
+}
+.blog-banner-text{
+    order: 0;
+    width: 35.25%;
+}
+.grid-cell--center{
+    align-self: center;
+}
+
+.blog-card{
+    cursor: pointer;;
+}
+
+.blog-post-info+.blog-card-text {
+    margin-top: 10px;
+}
+
+.large-card .blog-card-heading{
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.blog-card-heading {
+    font-size: 26px;
+    line-height: 1.2;
+    margin: 0 0 10px;
+    font-weight: 500;
+}
+
+.blog-card-para{
+    font-size: 16px;
+    line-height: 1.63;
+    color: #5c6064;
+}
+
+.blog-banner-gfx{
+    padding: 30px;
+    order: 1;
+    width: 58%;
+    position: relative;
+}
+
+.blog-video-section .blog-card-image{
+    margin: 0;
+    max-width: 720px;
+    width: 100%;
+}
+
+.blog-card-image{
+    border-radius: 20px;
+    box-shadow: 0 10px 20px 0 rgba(92,96,100,.2);
+    margin: 0 0 30px;
+    transition: all .3s;
+}
+.blog-card-image:hover {
+    box-shadow: 0 0 10px 0 #e6e6e6;
+    transform: scale(1.05);
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.blog-banner-hero {
+    position: absolute;
+    top: -235px;
+    z-index: -1;
+    right: -170px;
+}
+
+.rest-blog{
+    padding: 0 0 100px;
+}
+
+.container{
+    width: 1170px;
+}
+
+.grid--1of2>.grid-cell.blog-card-wrap {
+    max-width: 520px;
+}
+
+.blog-bard{
+    cursor: pointer;
+}
+.blog-card-image-wrap {
+    display: inline-block;
+}
+.blog-post-info{
+    display: flex;
+}
+.blog-info{
+    display: flex;
+    font-size: 14px;
+    color: #5c6064;
+}
+.blog-info-img{
+    padding-right: 5px
+}
+.blog-info-time{
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #888;
+    position: relative;
+}

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-blogindexpage{% endblock %}
+
+{% block content %}
+
+{% include 'includes/navbar.html' %}
+{% if page.get_children %}
+{% with first_child=page.get_children.specific.first %}
+{% if first_child %}
+        <section class="blog-banner first-blog">
+            <div class="container stretched">
+                <div class="blog-banner-wrap grid grid--full large-grid--fit grid--justify-between">
+                    <div class="grid-cell--center blog-banner-text">
+                        <div class="blog-card large-card">
+                            <div class="blog-post-info">
+                                <p class="blog-info">
+                                    <img src="https://blog.happyfox.com/wp-content/themes/happyfox-blog/assets/images/read_time.svg" alt="reading time icon" class="blog-info-img">
+                                    <span class="blog-info-time">
+                                        {{ first_child.get_reading_time }} min read
+                                    </span>
+                                </p>
+                                </div>
+                            <div class="blog-card-text">
+                                <a href="{% pageurl first_child %}">
+                                    <h1 class="blog-card-heading">
+                                        {{ first_child.title }}
+                                    </h1>
+                                    <div class="blog-card-para">
+                                        <p>
+                                            {{first_child.body|richtext|striptags|truncatewords:20}}
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-cell--center blog-banner-gfx">
+                        <div class="blog-video-section">
+                            <a href="{% pageurl first_child %}">
+                                {% image first_child.image scale-100 as img %} 
+                                <img src="{{ img.url }}" alt="banner-img" class="blog-card-image">
+                            </a>
+                        </div>
+                        <img src="https://blog.happyfox.com/wp-content/themes/happyfox-blog/assets/images/blog-banner-bg.svg" class="blog-banner-hero">
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+    {% endwith %}
+    
+    <section class="blog-inner rest-blog">
+        <div class="container with gutter">
+            <div class="grid grid--1of2 grid--justify-between">
+                {% for post in page.get_children.specific.all|slice:"1:" %}
+                <div class="grid-cell grid-cell-top u-1of2 blog-card-wrap">
+                    <div class="blog-card">
+                        {% image post.image scale-100 as img %}
+                        <a href="{% pageurl post %}" class="blog-card-image-wrap">
+                            <img src="{{img.url}}" alt="blog-card-img" class="blog-card-image">
+                        </a>
+                        <div class="blog-post-info">
+                            <p class="blog-info">
+                                <img src="https://blog.happyfox.com/wp-content/themes/happyfox-blog/assets/images/read_time.svg" alt="reading time icon" class="blog-info-img">
+                                <span class="blog-info-time">
+                                    {{ post.get_reading_time }} min read
+                                </span>
+                            </p>
+                        </div>
+                        <div class="blog-card-text">
+                            <a href="{% pageurl post %}">
+                                <h2 class="blog-card-heading">{{ post.title }}</h2>
+                                <div class="blog-card-para">
+                                    <p>
+                                        {{post.body|richtext|striptags|truncatewords:20}}
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+{% endif %}
+{% endblock %}
