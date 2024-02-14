@@ -1,147 +1,5 @@
-<!-- <style>
-  /* New Hero Thin */
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/ Hero Thin.otf") format("opentype");
-    font-weight: 100;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/New Hero Thin Italic.otf") format("opentype");
-    font-weight: 100;
-    font-style: italic;
-  }
-
-  /* New Hero UltraLight */
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/New Hero Ultra Light.otf") format("opentype");
-    font-weight: 200;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/New Hero Ultra Light Italic.otf") format("opentype");
-    font-weight: 200;
-    font-style: italic;
-  }
-
-  /* New Hero Light */
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/New Hero Light.otf") format("opentype");
-    font-weight: 300;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/Hero Light Italic.otf") format("opentype");
-    font-weight: 300;
-    font-style: italic;
-  }
-
-  /* New Hero Regular */
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/New Hero Regular.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/New Hero Regular Italic.otf") format("opentype");
-    font-weight: 400;
-    font-style: italic;
-  }
-
-  /* New Hero Medium */
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/New Hero Medium.otf") format("opentype");
-    font-weight: 500;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/New Hero Medium Italic.otf") format("opentype");
-    font-weight: 500;
-    font-style: italic;
-  }
-
-  /* New Hero SemiBold */
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/New Hero SemiBold.otf") format("opentype");
-    font-weight: 600;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/New Hero SemiBold Italic.otf") format("opentype");
-    font-weight: 600;
-    font-style: italic;
-  }
-
-  /* New Hero Bold */
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/New Hero Bold.otf") format("opentype");
-    font-weight: 700;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/NewHeroBoldItalic.otf") format("opentype");
-    font-weight: 700;
-    font-style: italic;
-  }
-
-  /* New Hero ExtraBold */
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/NewHeroExtraBold.otf") format("opentype");
-    font-weight: 800;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/New Hero ExtraBold Italic.otf") format("opentype");
-    font-weight: 800;
-    font-style: italic;
-  }
-
-  /* New Hero Super */
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/New Hero Super.otf") format("opentype");
-    font-weight: 900;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "New Hero";
-    src: url("../fonts/New Hero SuperItalic.otf") format("opentype");
-    font-weight: 900;
-    font-style: italic;
-  }
-  * {
-    font-family: "New Hero", sans-serif;
-  }
-
-  * {
-    margin: 0;
-  }
-  body {
-    font-family: "New Hero", sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #212529;
-    text-align: left;
-    margin: 0;
-  }
-
-  a {
+<style>
+  .blog-header a {
     text-decoration: none;
     color: inherit;
   }
@@ -156,50 +14,49 @@
     top: 0;
   }
 
-  .container {
-    max-width: 1170px;
+  .blog-header .container {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
   }
 
-  .blog-headwrap.grid {
+  .blog-header .blog-headwrap.grid {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 11px 0;
     position: relative;
     z-index: 5;
   }
-  .grid-justifybetween {
+  .blog-header .grid-justifybetween {
     justify-content: space-between;
   }
-  .grid {
+  .blog-header .grid {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     margin: 0;
     padding: 0;
   }
-  .grid-cell--center {
+  .blog-header .grid-cell--center {
     align-self: center;
   }
-  .blog-header-logo {
+  .blog-header .blog-header-logo {
     line-height: 1;
     display: inline-block;
   }
-  img {
+  .blog-header img {
     max-width: 100%;
     height: auto;
     overflow: clip;
   }
-  .blogs-category-cover {
+  .blog-header .blogs-category-cover {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  .blogs-header-category {
-    display: inline-block;
+  .blog-header .blogs-header-category {
+    display: none;
     position: relative;
     align-self: center;
     min-width: 100px;
@@ -208,16 +65,21 @@
     border-radius: 10px;
     margin-right: 15px;
   }
-  .blogs-header-categ-msg {
+  .blog-header .blogs-header-category:hover .blogs-header-arrow {
+    transform: rotate(0deg);
+  }
+  .blog-header .blogs-header-categ-msg {
     font-size: 14px;
     align-self: center;
     cursor: pointer;
+    font-weight: 400;
   }
-  .blogs-header-category:hover {
+  .blog-header .blogs-header-category:hover {
     cursor: pointer;
     background-color: #f4f6f6;
   }
-  .blogs-header-arrow {
+
+  .blog-header .blogs-header-arrow {
     transform: rotate(-180deg);
     transition: all 0.1s;
     width: 8px;
@@ -225,19 +87,21 @@
     align-self: center;
     margin-left: 3px;
   }
-  .blog-menu.grid {
-    z-index: 1;
-    opacity: 1;
-    position: static;
-    transform: none;
-    transition: none;
-    visibility: visible;
-    display: flex;
+  .blog-header .blog-menu.grid {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    transition: all 0.1s;
+    top: 89px;
+    width: 100%;
+    display: block;
   }
-  .blog-menu .menu-item {
+  .blog-header .blog-menu .menu-item {
     align-self: center;
   }
-  .blog-menu .menu-item a {
+  .blog-header .blog-menu .menu-item a {
     display: inline;
     padding: 7px 10px;
     margin-right: 32px;
@@ -245,19 +109,18 @@
     position: relative;
     font-size: 14px;
   }
-  .blog-menu .menu-item a:hover {
+  .blog-header .blog-menu .menu-item a:hover {
     cursor: pointer;
     background-color: #f4f6f6;
   }
-  .blog-demo-btn {
-    display: inline-block;
+  .blog-header .blog-demo-btn {
+    display: none;
     font-size: 14px;
     font-weight: 500;
     background: #e8580a;
     color: #fff;
     outline: 0;
     border: none;
-    display: inline-block;
     box-shadow: none;
     padding: 12px 20px;
     border-radius: 10px;
@@ -266,11 +129,81 @@
     white-space: nowrap;
     transition: background-color 0.3s linear;
   }
-</style> -->
+  .blog-header .blog-head-toggle {
+    cursor: pointer;
+    display: block;
+    order: 0;
+    margin-right: 15px;
+    position: absolute;
+    left: 0;
+}
+.blog-header .blog-head-toggle span {
+    display: block;
+    margin-bottom: 5px;
+    height: 3px;
+    width: 22px;
+    background: #b2b2b2;
+    border-radius: 9px;
+    opacity: 1;
+    position: relative;
+    top: 0;
+    transition: .4s ease-in-out;
+}
+.blog-header .blog-demo-btn:hover {
+    background: #d04f0a;
+    color: #fff;
+}
+  @media (min-width: 768px) {
+    .blog-header .container {
+      width: 750px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .blog-header .container {
+      width: 970px;
+    }
+    .blog-header .blog-headwrap.grid {
+      flex-direction: row;
+    }
+    .blog-header .blogs-header-category {
+      display: inline-block;
+    }
+    .blog-header .blog-menu.grid {
+      z-index: 1;
+      opacity: 1;
+      position: static;
+      transform: none;
+      transition: none;
+      visibility: visible;
+      display: flex;
+    }
+    .blog-header .blog-demo-btn {
+      display: inline-block;
+    }
+    .blog-header .blog-head-toggle{
+      display: none;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .blog-header .container {
+      width: 1170px;
+    }
+  }
+</style>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 <section class="blog-header">
   <div class="container">
     <div class="blog-headwrap grid grid-justifybetween">
       <div class="grid grid-cell--center">
+        <div class="blog-head-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <a href="#" class="blog-header-logo">
           <img
             src="https://blog.happyfox.com/wp-content/themes/happyfox-blog/assets/images/hfblog-logo-color.svg"

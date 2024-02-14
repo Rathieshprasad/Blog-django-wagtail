@@ -10,6 +10,11 @@
 {% if page.get_children %}
 {% with first_child=page.get_children.specific.first %}
 {% if first_child %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<div class="blog-index">
         <section class="blog-banner first-blog">
             <div class="container stretched">
                 <div class="blog-banner-wrap grid grid--full large-grid--fit grid--justify-between">
@@ -87,6 +92,6 @@
             </div>
         </div>
     </section>
-    
+</div>
 {% endif %}
 {% endblock %}

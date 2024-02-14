@@ -11,6 +11,11 @@
 {% block content %} 
 
 {% include 'includes/navbar.html' %}
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<div class="blog-page">
 <div class="progress-container">
     <div class="progress-bar" id="myBar"></div>
 </div>
@@ -20,6 +25,8 @@
       <div class="blog-content-container u-text-left">
         <div class="blog-breadcrumb">
             <a href="{{ page.get_parent.url }}" class="blog-breadcrumb-link">Home <img class="blogs-header-arrow" src="https://blog.happyfox.com/wp-content/themes/happyfox-blog/assets/images/down.svg" alt="Happyfox Blog selector"></a>
+            <a href="#" class="blog-breadcrumb-link">{{page.category}} <img class="blogs-header-arrow" src="https://blog.happyfox.com/wp-content/themes/happyfox-blog/assets/images/down.svg" alt="Happyfox Blog selector"></a>
+
         </div>
         <h1 class="blog-post-heading">{{ page.title }}</h1>
         <div class="blog-time-wrap">
@@ -128,11 +135,56 @@
                 {{ page.body|richtext }}
             </article>
         </div>
+        
+        
+        
+        
+        
       </div>
     </div>
   </section>
-  <!-- <div class="intro">{{ page.intro }}</div>
-  <p><a href="{{ page.get_parent.url }}">Return to blog</a></p> -->
+  <section class="similar-posts">
+    <div class="container u-text-center">
+      <h4 class="similar-post-head">
+        Similar Posts
+      </h4>
+      <div class="grid grid--1of3 grid--justify-between u-text-left">
+        {% with related_posts=page.get_parent %}
+        {% with cat=page.category %}
+        {% for post in related_posts.get_children.specific.all|slice:":3" %}
+        <div class="grid-cell grid-cell-top u-1of2 blog-card-wrap">
+          <div class="blog-card">
+            <a href="{% pageurl post %}" class="blog-card-image-wrap">
+              {% if post.image %}
+              {% image post.image scale-100 as img %} 
+              <img src="{{ img.url }}" alt="blog-pic" class="blog-card-image">
+              {% endif %}
+            </a>
+            <div class="blog-post-info">
+              <p class="blog-info">
+                <img src="https://blog.happyfox.com/wp-content/themes/happyfox-blog/assets/images/read_time.svg" alt="reading time icon" class="blog-info-img">
+                <span class="blog-info-time">
+                    {{ post.get_reading_time }} min read
+                </span>
+            </p>
+            </div>
+            <div class="blog-card-text">
+              <a href="{% pageurl post %}">
+                <h2 class="blog-card-heading">
+                  {{ post.title }}
+                </h2>
+              </a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% endwith %}
+        {% endwith %}
+      </div>
+          
+    </div>
+  </section>
+</div>
 </div>
 {% endblock %}
 
